@@ -1,0 +1,36 @@
+{
+  "name": "next-ev-infra-clone",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "static": "next build && next export",
+    "copy": "cap copy",
+    "open:android": "cap open android",
+    "sync:android": "cap sync android",
+    "run:android": "yarn static && yarn sync:android && cap run android",
+    "open:ios": "cap open ios",
+    "sync:ios": "cap sync ios",
+    "run:ios": "yarn static && yarn sync:ios && cap run ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "^4.6.3",
+    "@capacitor/core": "^4.6.3",
+    "@capacitor/ios": "^4.6.3",
+    "next": "13.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^4.6.3",
+    "@types/node": "18.13.0",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.34.0",
+    "eslint-config-next": "13.1.6",
+    "typescript": "4.9.5"
+  }
+}

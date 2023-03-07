@@ -36,3 +36,9 @@ yarn-error.log*
 
 # IDE
 .idea
+
+#env
+.env
+.env.production
+.env.development
+.env.staging

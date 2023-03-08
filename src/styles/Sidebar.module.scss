@@ -1,0 +1,26 @@
+.sidebar {
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s, transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateX(-200px);
+  z-index: 1;
+
+  &.open {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.menus {
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}

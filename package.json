@@ -1,5 +1,5 @@
 {
-  "name": "next-ev-infra-clone",
+  "name": "chris-p-bacon",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,10 +11,14 @@
     "copy": "cap copy",
     "open:android": "cap open android",
     "sync:android": "cap sync android",
-    "run:android": "yarn static && yarn sync:android && cap run android",
+    "run:android": "yarn static && yarn sync:android && cap run android --external -l",
+    "gradle:clean": "cd android && ./gradlew clean && cd ../",
     "open:ios": "cap open ios",
     "sync:ios": "cap sync ios",
-    "run:ios": "yarn static && yarn sync:ios && cap run ios",
+    "run:ios": "yarn static && yarn sync:ios && cap run ios --external -l",
+    "pod:install": "npm run pod:clean && cd ios && pod install && cd ../",
+    "pod:clean": "cd ios && pod cache clean --all && cd ../",
+    "pod:remove:all": "rm -rf ./ios/Pods/",
     "prisma:generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev --name migration",
     "prisma:migrate:reset": "prisma migrate reset",

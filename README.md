@@ -1,34 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## CLI
 
-## Getting Started
-
-First, run the development server:
+### run development server
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the
+result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### run production server
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+    1. build source files
+    2. run server
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+yarn build && yarn start
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the
+result.
 
-To learn more about Next.js, take a look at the following resources:
+### create static source file
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+yarn build
+# static files are created in /.next/ directory
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### run on simulator
 
-## Deploy on Vercel
+```bash
+yarn run:android # for android
+yarn run:ios # for iOS
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### app build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+# 주의! 개발용 서버는 반드시 종료 후 빌드를 진행해야 함
+# 앱 빌드했을 때, 네트워크가 비정상적으로 동작할 수 있음
+
+#안드로이드 스튜디오 혹은 xCode 를 열고, 빌드 설정에 따라 앱 빌드, cli로 제공시, 변수 대응 어려움
+```
+
+### DB Schema
+
+```bash
+# create migration file
+yarn prisma:migrate:dev
+
+# clear all table data
+yarn prisma:migrate:reset
+
+#mark to resolve migration file
+yarn prisma:run:resolve
+
+#check migration file
+yarn prisma:run:status
+
+# deploy migration data to database
+yarn prisma:run:deploy
+
+# get database schema
+yarn prisma:pull
+
+# run migration flow
+yarn prisma:run:migration
+
+# open prisma studio
+yarn prisma:studio
+```
+
+## Versions
+
+- nextJS 13.1.6
+- react 18.2.0
+- sass 1.58.3
+- prisma 4.11.0
+- CapacitorJS 4.6.3
+- node 18.12.1
+
+## code convention
+
+- ESLint
+- Prettier

@@ -7,20 +7,63 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model board_entity {
-  id          Int          @id @default(autoincrement())
-  title       String       @db.VarChar(255)
-  description String       @db.VarChar(255)
-  status      String       @db.VarChar(255)
-  userId      Int?
-  user_entity user_entity? @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_6b0ae2f186480df1ea3bb52eebd")
-
-  @@index([userId], map: "FK_6b0ae2f186480df1ea3bb52eebd")
+model user {
+  id          Int        @id @default(autoincrement())
+  name        String     @db.VarChar(20)
+  gender      String     @db.VarChar(10)
+  birth       String     @db.VarChar(30)
+  email       String     @unique
+  password    String
+  nickname    String
+  created_at  DateTime   @default(now())
+  modified_at DateTime?
+  deleted_at  DateTime?
+  user_role   user_role?
 }
 
-model user_entity {
-  id           Int            @id @default(autoincrement())
-  password     String         @db.VarChar(255)
-  username     String         @unique(map: "IDX_9b998bada7cff93fcb953b0c37") @db.VarChar(255)
-  board_entity board_entity[]
+model user_role {
+  user_id Int  @unique
+  role_id Int
+  role    role @relation(fields: [role_id], references: [role_id])
+  user    user @relation(fields: [user_id], references: [id])
+
+  @@index([role_id], map: "user_role_role_id_fkey")
+}
+
+model role {
+  role_id     Int         @id @default(autoincrement())
+  role_title  String      @unique
+  code        String
+  created_at  DateTime    @default(now())
+  modified_at DateTime
+  deleted_at  DateTime
+  user_role   user_role[]
+}
+
+model boards {
+  board_id    Int       @id @default(autoincrement())
+  is_use      Boolean
+  created_at  DateTime  @default(now())
+  modified_at DateTime?
+  deleted_at  DateTime?
+  board_code  Int
+  category    category  @relation(fields: [board_code], references: [category_id])
+
+  @@index([board_code], map: "boards_board_code_fkey")
+}
+
+model category {
+  category_id     Int        @id @default(autoincrement())
+  category_group  String
+  category_name   String
+  parent_id       Int?
+  created_at      DateTime   @default(now())
+  modified_at     DateTime?
+  deleted_at      DateTime?
+  is_use          Boolean    @default(true)
+  boards          boards[]
+  parent_category category?  @relation("parent_category", fields: [parent_id], references: [category_id])
+  category        category[] @relation("parent_category")
+
+  @@index([parent_id], map: "category_parent_id_fkey")
 }

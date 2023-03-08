@@ -14,7 +14,16 @@
     "run:android": "yarn static && yarn sync:android && cap run android",
     "open:ios": "cap open ios",
     "sync:ios": "cap sync ios",
-    "run:ios": "yarn static && yarn sync:ios && cap run ios"
+    "run:ios": "yarn static && yarn sync:ios && cap run ios",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate:dev": "prisma migrate dev --name migration",
+    "prisma:migrate:reset": "prisma migrate reset",
+    "prisma:run:deploy": "prisma migrate deploy",
+    "prisma:run:status": "prisma migrate status",
+    "prisma:run:resolve": "prisma migrate resolve",
+    "prisma:pull": "prisma db pull",
+    "prisma:run:migration": "yarn prisma:migrate:dev && yarn prisma:run:deploy && yarn prisma:generate",
+    "prisma:studio": "prisma studio"
   },
   "dependencies": {
     "@capacitor/android": "^4.6.3",

@@ -68,9 +68,13 @@ const Home: NextPage = (props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const feed = await prisma.board_entity.findMany({});
+  const feeds = await prisma.category.findMany({});
+
+  const feedss = feeds.map((feed) => {
+    return { ...feed, created_at: feed.created_at.toString() };
+  });
   return {
-    props: { feed },
+    props: { feeds: feedss },
     revalidate: 10,
   };
 };

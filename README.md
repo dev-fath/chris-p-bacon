@@ -47,6 +47,9 @@ yarn run:ios # for iOS
 ### DB Schema
 
 ```bash
+# initialize database
+yarn prisma:init
+
 # create migration file
 yarn prisma:migrate:dev
 

@@ -21,7 +21,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
-    "baseUrl": ".",
+    "baseUrl": "src",
     /* Base directory to resolve non-absolute module names. */
     "paths": {
       "@api/*": [
@@ -35,6 +35,9 @@
       ],
       "@constants/*": [
         "constants/*"
+      ],
+      "@contexts/*": [
+        "contexts/*"
       ],
       "@hooks/*": [
         "hooks/*"
@@ -50,6 +53,9 @@
       ],
       "@utils/*": [
         "utils/*"
+      ],
+      "@orm/*": [
+        "orm/*"
       ]
     },
     "resolveJsonModule": true,

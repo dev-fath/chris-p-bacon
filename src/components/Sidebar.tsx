@@ -28,7 +28,6 @@ const Sidebar = () => {
         ></div>
       </span>
       <div></div>
-      <button onClick={handleToggleSidebar}>Toggle Sidebar</button>
     </>
   );
 };

@@ -2,7 +2,7 @@ import { category, PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-interface CreateCategoryDto extends Partial<category> {
+export interface CreateCategoryDto extends Partial<category> {
   category_group: string;
   category_name: string;
   is_use: boolean;
@@ -22,4 +22,8 @@ export const createCategory = async (props: CreateCategoryDto) => {
   console.log(createResult);
 
   return createResult;
+};
+
+export const findCategories = async () => {
+  return prisma.category.findMany();
 };

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styles from '@styles/Sidebar.module.scss';
 import Link from 'next/link';
-import { SidebarContext } from 'context/SidebarContext';
+import { SidebarContext } from 'contexts/SidebarContext';
 
 const Sidebar = () => {
   const { isOpen, handleToggleSidebar } = useContext(SidebarContext);

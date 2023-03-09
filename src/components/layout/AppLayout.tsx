@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Sidebar from '@components/Sidebar';
-import SidebarProvider from 'context/SidebarContext';
+import SidebarProvider from 'contexts/SidebarContext';
 
 interface PropsInterface {
   children: ReactNode;

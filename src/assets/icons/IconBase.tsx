@@ -1,5 +1,10 @@
 import React from 'react';
-import TwitterIcon from '@assets/icons/twitter.icon';
+import TwitterIcon from '@assets/icons/Twitter.icon';
+import MeatballsIcon from '@assets/icons/Meatballs.icon';
+import ReplyIcon from '@assets/icons/Reply.icon';
+import ReTwitIcon from '@assets/icons/ReTwit.icon';
+import LikeIcon from '@assets/icons/Like.icon';
+import ShareIcon from '@assets/icons/Share.icon';
 
 interface IconBaseProps {
   icon: IconNameType;
@@ -17,6 +22,11 @@ const getIcon = (props: IconProps) => {
 
   return {
     twitter: <TwitterIcon width={width} height={height} color={color} />,
+    meatballs: <MeatballsIcon width={width} height={height} color={color} />,
+    reply: <ReplyIcon width={width} height={height} color={color} />,
+    reTwit: <ReTwitIcon width={width} height={height} color={color} />,
+    like: <LikeIcon width={width} height={height} color={color} />,
+    share: <ShareIcon width={width} height={height} color={color} />,
   };
 };
 

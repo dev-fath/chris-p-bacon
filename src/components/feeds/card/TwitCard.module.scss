@@ -1,8 +1,116 @@
 .container {
   padding: 0 1.6rem;
+
+  .cardContainer {
+    display: flex;
+    flex-flow: row nowrap;
+
+    .twitContentsArea {
+      padding-bottom: 1.6rem;
+
+      .twitMetadataContainer {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        .userMetadataWrapper {
+          display: flex;
+          flex-flow: row nowrap;
+          color: #888;
+
+          .userMetadata {
+            display: flex;
+            flex-flow: row nowrap;
+
+            .userName {
+              color: #222;
+              font-weight: bold;
+              margin-right: 0.4rem;
+            }
+
+            .userId {
+              margin-right: 0.4rem;
+            }
+
+            .dot {
+              margin-right: 0.4rem;
+            }
+          }
+        }
+
+      }
+
+      .twitContents {
+
+      }
+
+      .mediaContainer {
+        width: 100%;
+        margin-top: 1.2rem;
+
+        img {
+          position: relative !important;
+        }
+
+        .twitImage {
+          border-radius: 1.6rem;
+          border: 0.1rem solid #dfdfdf;
+          width: 100%
+        }
+      }
+
+      .twitStatsContainer {
+        margin-top: 1.2rem;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .statsWrapper {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          gap: 0.8rem;
+          color: #888;
+          line-height: 1.6rem;
+        }
+      }
+    }
+  }
+
+}
+
+.threadArea {
+  margin-right: 0.8rem;
+  display: flex;
+  flex-flow: column nowrap;
+
+  .threadLineWrapper {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.4rem;
+
+    .threadLine {
+      background-color: #ccc;
+      height: 100%;
+      width: 0.2rem;
+    }
+  }
+}
+
+.threadContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  .threadLink {
+    color: #6af;
+  }
 }
 
 .twitDivider {
   border-top: solid 1px #ccc;
-  margin: 0.4rem 0
+  margin: 0.4rem 0 1.2rem 0
 }

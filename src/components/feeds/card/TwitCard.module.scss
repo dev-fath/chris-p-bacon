@@ -1,5 +1,36 @@
 .container {
   padding: 0 1.6rem;
+
+  .cardContainer {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
+
+.threadArea {
+  margin-right: 0.8rem;
+  display: flex;
+  flex-flow: column nowrap;
+
+  .threadLineWrapper {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.4rem;
+
+    .threadLine {
+      background-color: #ccc;
+      height: 100%;
+      width: 0.2rem;
+    }
+  }
+}
+
+.threadContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 
 .twitDivider {

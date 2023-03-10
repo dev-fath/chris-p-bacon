@@ -2,15 +2,13 @@ import React from 'react';
 import styles from './Avatar.module.scss';
 import Image from 'next/image';
 
-const Avatar = (props: { imageSrc: string }) => {
+const Avatar = (props: { imageSrc: string; size?: number }) => {
+  const { imageSrc, size = 30 } = props;
+
   return (
-    <Image
-      className={styles.avatar}
-      width={30}
-      height={30}
-      src={props.imageSrc}
-      alt={'thumbnail'}
-    />
+    <div className={styles.avatarWrapper}>
+      <Image className={styles.avatar} width={size} height={size} src={imageSrc} alt={'avatar'} />
+    </div>
   );
 };
 

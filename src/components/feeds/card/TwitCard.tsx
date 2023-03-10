@@ -50,7 +50,7 @@ const TwitCard = () => {
             <div className={styles.mediaContainer}>
               <Image
                 className={styles.twitImage}
-                src={'https://pbs.twimg.com/media/Fq0qx1kakAAryv8?format=jpg&name=900x900'}
+                src={'https://pbs.twimg.com/media/FqwH5qgaUAUNWeF?format=jpg&name=small'}
                 alt={'twit pic'}
                 fill={true}
               />

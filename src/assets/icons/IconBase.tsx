@@ -5,6 +5,7 @@ import ReplyIcon from '@assets/icons/Reply.icon';
 import ReTwitIcon from '@assets/icons/ReTwit.icon';
 import LikeIcon from '@assets/icons/Like.icon';
 import ShareIcon from '@assets/icons/Share.icon';
+import LogoIcon from '@assets/icons/Logo.icon';
 
 interface IconBaseProps {
   icon: IconNameType;
@@ -27,6 +28,7 @@ const getIcon = (props: IconProps) => {
     reTwit: <ReTwitIcon width={width} height={height} color={color} />,
     like: <LikeIcon width={width} height={height} color={color} />,
     share: <ShareIcon width={width} height={height} color={color} />,
+    logo: <LogoIcon width={width} height={height} />,
   };
 };
 

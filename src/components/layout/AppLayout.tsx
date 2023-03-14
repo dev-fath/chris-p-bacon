@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 import React, { useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Head from 'next/head';
@@ -7,13 +7,9 @@ import Sidebar from '@components/Sidebar';
 import SidebarProvider from 'contexts/SidebarContext';
 import Header from '@components/layout/Header';
 
-interface PropsInterface {
-  children: ReactNode;
-}
-
 let isBack = false;
 
-const AppLayout = ({ children }: PropsInterface) => {
+const AppLayout = ({ children }: PropsWithChildren) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -38,6 +34,10 @@ const AppLayout = ({ children }: PropsInterface) => {
           <meta name="description" content="Twitter clone" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <link rel="icon" href="/favicon.ico" />
+          <link
+            href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
+            rel="stylesheet"
+          />
         </Head>
         <Header />
         <Sidebar />

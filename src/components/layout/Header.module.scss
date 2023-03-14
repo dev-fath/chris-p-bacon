@@ -1,24 +1,30 @@
-
-.fixed {
+.container {
   z-index: 100;
   position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
   width: 100%;
-  height: fit-content;
-  background-color: white;
+  height: 64px;
+  padding: 0 16px;
 
-  .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* add shadow */
-    padding: 0 1.6rem;
-    justify-content: space-between;
-
-    .headerSide {
-      flex: 2;
-    }
-  }
+  background-color: #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* add shadow */
 }
 
+.logoBox {
+  display: flex;
+  align-items: center;
 
+  .logoText {
+    font-family: "NanumSquareAcb";
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 135%;
+
+    color: #ffffff;
+    margin-left: 8px;
+  }
+}

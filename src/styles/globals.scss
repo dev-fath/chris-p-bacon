@@ -1,6 +1,9 @@
 @import 'Sidebar.module.scss';
 @import '@components/layout/AppLayout.scss';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
